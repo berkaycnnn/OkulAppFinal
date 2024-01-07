@@ -25,6 +25,7 @@ namespace OkulApp.BLL
                              new SqlParameter("@Soyad",ogrt.Soyad),
                              new SqlParameter("@TCkimlik",ogrt.TCkimlik)
                          };
+                //var hlp = new Helper();
                 return hlp.ExecuteNonQuery("Insert into tblOgretmenlerr values(@Ad, @Soyad, @TCkimlik)", p) > 0;
             }
             catch (SqlException)
@@ -41,6 +42,7 @@ namespace OkulApp.BLL
         } 
         public Ogretmen OgretmenBul(string TCkimlik)
         {
+            //var hlp = new Helper();
             try
             {
                 SqlParameter[] p = { new SqlParameter("@TCkimlik", TCkimlik) };
@@ -66,12 +68,13 @@ namespace OkulApp.BLL
                 throw;
             }
         }
-        public bool OgretmenSil(int TCkimlik)
+        public bool OgretmenSil(int OgretmenID)
         {
             try
             {
-                SqlParameter[] p = { new SqlParameter("@TCkimlik", TCkimlik) };
-                return hlp.ExecuteNonQuery("Delete from tblOgretmenler where OgretmenID=@OgretmenID", p) > 0;
+                //var hlp = new Helper();
+                SqlParameter[] p = { new SqlParameter("@OgretmenID", OgretmenID) };
+                return hlp.ExecuteNonQuery("Delete from tblOgretmenlerr where OgretmenID=@OgretmenID", p) > 0;
             }
             catch (Exception)
             {
@@ -86,6 +89,7 @@ namespace OkulApp.BLL
                 new SqlParameter("@Soyad",ogrt.Soyad),
                 new SqlParameter("@TCKimlik", ogrt.TCkimlik),
                 new SqlParameter("@OgretmenID",ogrt.OgretmenID)};
+                //var hlp = new Helper();
                 return hlp.ExecuteNonQuery("Update tblOgretmenlerr set Ad=@Ad,Soyad=@Soyad,TCkimlik=@TCkimlik where OgretmenID=@OgretmenID", p) > 0;
             }
             catch (SqlException)

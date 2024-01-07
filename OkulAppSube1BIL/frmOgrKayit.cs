@@ -80,20 +80,24 @@ namespace OkulAppSube1BIL
                 throw;
             }
         }
-
         private void btnGuncelle_Click(object sender, EventArgs e)
         {
-            try
-            {
-                var obl = new OgrenciBL();
-                MessageBox.Show(obl.OgrenciGuncelle(new Ogrenci { Ad = txtAd.Text.Trim(), Soyad = txtSoyad.Text.Trim(), Numara = txtNumara.Text.Trim(), OgrenciId = OgrenciId }) ? "Güncelleme Başarılı" : "Güncelleme Başarısız!");
-            }
-            catch (Exception)
-            {
-                throw;
+                try
+                {
+                    var obl = new OgrenciBL();
+                    MessageBox.Show(obl.OgrenciGuncelle(new Ogrenci { Ad = txtAd.Text.Trim(), Soyad = txtSoyad.Text.Trim(), Numara = txtNumara.Text.Trim(), OgrenciId = OgrenciId }) ? "Güncelleme Başarılı" : "Güncelleme Başarısız!");
+                }
+                catch (Exception)
+                {
+                    throw;
+                }
             }
         }
-
-      
     }
-}
+
+       
+    
+
+    
+
+
