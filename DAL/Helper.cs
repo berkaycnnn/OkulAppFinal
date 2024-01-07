@@ -6,7 +6,7 @@ using System.Linq.Expressions;
 
 namespace DAL
 {
-    public class Helper
+    public class Helper : IDisposable
     {
         private static Helper instance;
         private SqlConnection cn;
