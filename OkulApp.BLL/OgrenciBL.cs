@@ -66,6 +66,7 @@ namespace OkulApp.BLL
             {
                 throw;
             }
+            finally { hlp.Dispose(); }
         }
 
         public bool OgrenciSil(int id)

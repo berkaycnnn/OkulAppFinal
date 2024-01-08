@@ -10,7 +10,7 @@ namespace DAL
     {
         private static Helper instance;
         private SqlConnection cn;
-        private SqlCommand cmd;
+        private SqlCommand cmd; 
         private string cstr = ConfigurationManager.ConnectionStrings["cstr"].ConnectionString;
         private Helper() { }
         public static Helper GetInstance
@@ -63,9 +63,9 @@ namespace DAL
             }
             catch (Exception)
             {
-                Dispose();
                 throw;
             }
+            finally { Dispose(); }
 
         }
         public void Dispose()
